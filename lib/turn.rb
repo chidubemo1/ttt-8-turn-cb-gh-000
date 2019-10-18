@@ -16,8 +16,12 @@ def valid_move?(board, index)
     return false
 end
 
+def position_taken?(board, index)
+  if(board[index] == " " || board[index] == "" || board[index] == nil)
+    return false
+  return true
+end
+
 def turn(board)
   uinput = gets.strip
   index = input_to_index(uinput)
-  
-  
