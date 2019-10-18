@@ -22,6 +22,19 @@ def position_taken?(board, index)
   return true
 end
 
+def move(board, index, symbol = 'X')
+  board[index] = symbol
+end
+
 def turn(board)
   uinput = gets.strip
   index = input_to_index(uinput)
+  until valid_move?(board, index) do
+    uinput = gets.strip
+    index = input_to_index(uinput)
+  end
+  if(valid_move?(board, index))
+    move(board, index)
+    display_board(board)
+  end
+end
